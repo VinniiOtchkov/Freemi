@@ -1,4 +1,4 @@
-package com.atm;
+package com.freemi;
 
 import android.app.Application;
 

@@ -32,4 +32,4 @@ const styles = StyleSheet.create({
 });
 
 //Render it to the device
-AppRegistry.registerComponent('ATM', () => App);
+AppRegistry.registerComponent('Freemi', () => App);

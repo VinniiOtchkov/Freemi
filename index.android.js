@@ -12,7 +12,7 @@ import {
   View
 } from 'react-native';
 
-export default class ATM extends Component {
+export default class Freemi extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -50,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('ATM', () => ATM);
+AppRegistry.registerComponent('Freemi', () => Freemi);
