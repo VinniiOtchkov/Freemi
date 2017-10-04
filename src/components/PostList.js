@@ -5,9 +5,8 @@ import { connect } from 'react-redux';
 class PostList extends Component {
   render() {
     console.log('THIS.PROPS', this.props);
-    return (
-      <View />
-    );
+    console.log('THIS.PROPS.POSTS', this.props.posts);
+    return;
   }
 }
 

@@ -4,19 +4,24 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, combineReducers, compose} from 'redux';
 import thunkMiddleWare from 'redux-thunk';
 import createLogger from 'redux-logger';
+import reducers from './src/reducers';
+
 import Header from './src/components/Header';
 import Search from './src/components/Search';
+import PostList from './src/components/PostList';
 import Footer from './src/components/Footer';
 
 
 const App = () => (
-
+<Provider store={createStore(reducers)}>
   <View style={styles.container}>
     <Header />
     <Image style={styles.icon} source={require('./public/logo.png')} />
     <Search />
+    <PostList />
     <Footer />
   </View>
+</Provider>
 );
 
 const styles = StyleSheet.create({
