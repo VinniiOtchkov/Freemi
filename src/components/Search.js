@@ -12,7 +12,7 @@ const Search = () => {
 
 const styles = StyleSheet.create({
   form: {
-    paddingTop: 50
+    paddingTop: 0
   }
 });
 

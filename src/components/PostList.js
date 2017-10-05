@@ -6,7 +6,7 @@ class PostList extends Component {
   render() {
     console.log('THIS.PROPS', this.props);
     console.log('THIS.PROPS.POSTS', this.props.posts);
-    return(
+    return (
       <Text></Text>
     );
   }
