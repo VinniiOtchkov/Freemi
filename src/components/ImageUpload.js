@@ -36,8 +36,8 @@ export default class ImageUpload extends Component {
     window.Blob = Blob;
     const uid = '12345';
     ImagePicker.openPicker({
-      width: 300,
-      height: 300,
+      width: 600,
+      height: 600,
       cropping: true,
       mediaType: 'photo'
     }).then(image => {

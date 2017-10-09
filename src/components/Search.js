@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Icon, FormLabel, FormInput, FormValidationMessage } from 'react-native-elements';
+import { FormInput } from 'react-native-elements';
 
 const Search = () => {
   return (

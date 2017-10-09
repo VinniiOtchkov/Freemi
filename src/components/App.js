@@ -5,8 +5,8 @@ import {
   Image,
 } from 'react-native';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-
+import { createStore, applyMiddleware } from 'redux';
+import promises from 'redux-promise-middleware';
 import reducers from '../reducers';
 import Header from './Header';
 import Search from './Search';
@@ -14,7 +14,7 @@ import ImageUpload from './ImageUpload';
 import PostList from './PostList';
 import Footer from './Footer';
 
-const store = createStore(reducers);
+const store = createStore(reducers, applyMiddleware(promises()));
 
 const App = () => {
     return (
