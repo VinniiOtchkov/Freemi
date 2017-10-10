@@ -6,8 +6,6 @@ import {
   Image,
 } from 'react-native';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import promises from 'redux-promise-middleware';
 import Store from '../store';
 
 import Header from './Header';

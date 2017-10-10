@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
-import * as postActions from '../actions';
 import { FormInput } from 'react-native-elements';
 import { bindActionCreators } from 'redux';
-import axios from 'axios';
-
+import * as postActions from '../actions';
 import Post from './Post';
 
 class PostList extends Component {
@@ -20,6 +18,7 @@ class PostList extends Component {
 
 componentDidMount() {
   this.props.postActions.fetchPosts();
+  this.props.postActions.fetchPics();
 }
 
 // updateFilter(e) {
@@ -38,15 +37,17 @@ componentDidMount() {
     return (
       <View>
       <FormInput placeholder="Search" />
+      <View style={styles.postsStyle}>
       {filteredPosts}
+      </View>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  form: {
-    paddingTop: 0
+  postsStyle: {
+  paddingTop: 220
   }
 });
 

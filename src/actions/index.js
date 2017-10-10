@@ -7,6 +7,13 @@ export const fetchPosts = () => {
   };
 };
 
+export const fetchPics = () => {
+  return {
+    type: 'FETCH_PICS',
+    payload: axios.get('freemi-383ac.appspot.com/12345')
+  };
+};
+
 export const addPost = (post) =>{
   return {
     type: 'ADD',

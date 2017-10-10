@@ -86,7 +86,6 @@ export default class Footer extends Component {
        underlayColor='transparent'
        reverseColor='white'
       onPress={() => this.openPicker()}
-      title={'Upload Picture'}
       />)
 
     const dps = this.state.loading ?
