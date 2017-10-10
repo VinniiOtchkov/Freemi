@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, ScrollView, Text, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 import * as postActions from '../actions';
 import { FormInput } from 'react-native-elements';

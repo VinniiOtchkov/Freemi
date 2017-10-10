@@ -22,8 +22,10 @@ const App = () => {
       <Provider store={StoreInstance}>
         <View style={styles.container}>
           <Header />
+          <ScrollView bounces>
           <Image style={styles.icon} source={require('../../public/logo.png')} />
           <PostList />
+          </ScrollView>
           <Footer />
         </View>
       </Provider>

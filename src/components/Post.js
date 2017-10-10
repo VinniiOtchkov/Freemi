@@ -1,12 +1,18 @@
 import React from 'react';
-import {connect} from 'react-redux';
 import { View, Text } from 'react-native';
-import {bindActionCreators} from 'redux';
-
 
 const Post = (props) => {
   return (
-    <View style={styles.containerStyle}><Text>{props.post.title}</Text></View>
+    <View style={styles.containerStyle}>
+      <Text>
+      Title:{"\n"}
+      {props.post.title}
+      </Text>
+      <Text>
+      Description:{"\n"}
+      {props.post.description}
+      </Text>
+    </View>
   );
 };
 

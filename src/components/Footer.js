@@ -37,8 +37,8 @@ export default class Footer extends Component {
     window.Blob = Blob;
     const uid = '12345';
     ImagePicker.openPicker({
-      width: 600,
-      height: 600,
+      width: 300,
+      height: 300,
       cropping: true,
       mediaType: 'photo'
     }).then(image => {
