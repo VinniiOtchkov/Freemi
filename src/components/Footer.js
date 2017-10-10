@@ -76,10 +76,13 @@ export default class Footer extends Component {
     })
   }
   render() {
-    const dpr = this.state.dp ? (<TouchableOpacity onPress={() => this.openPicker()}><Image
-         style={{ width: 100, height: 100, margin: 5 }}
-         source={{ uri: this.state.dp }}
-       /></TouchableOpacity>) : (<Icon
+    const dpr = this.state.dp ? (<Icon
+    name='check'
+    type='font-awesome'
+    color='green'
+    underlayColor='transparent'
+    reverseColor='white'
+      />) : (<Icon
        name='camera'
        type='font-awesome'
        color='#DE451C'
