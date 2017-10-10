@@ -12,7 +12,6 @@ import Store from '../store';
 
 import Header from './Header';
 import Search from './Search';
-import ImageUpload from './ImageUpload';
 import PostList from './PostList';
 import Footer from './Footer';
 
@@ -24,7 +23,6 @@ const App = () => {
         <View style={styles.container}>
           <Header />
           <Image style={styles.icon} source={require('../../public/logo.png')} />
-          <ImageUpload />
           <PostList />
           <Footer />
         </View>
