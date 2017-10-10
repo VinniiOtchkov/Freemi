@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, Text, Image, Linking } from 'react-native';
 import { Icon } from 'react-native-elements';
-import call from 'react-native-phone-call'
 
 
 const Post = (props) => {
+  console.log(props.post);
   return (
     <View style={styles.containerStyle}>
-          <Image style={styles.imageStyle} source={require('../../public/pickleRick.jpg')} />
+          <Image style={styles.imageStyle} source={{ uri: props.post.picURL }} />
       <Text style={styles.titleStyle}>
       {props.post.title}
       </Text>
@@ -25,7 +25,7 @@ const Post = (props) => {
       color='#DE451C'
       underlayColor='transparent'
       reverseColor='white'
-      onPress={() => console.log('LOL')}
+      onPress={() => Linking.openURL('tel: 6025039088')}
       />
      <Icon
      style={styles.mailStyle}
@@ -58,14 +58,15 @@ const styles = {
   },
   imageStyle: {
     alignSelf: 'center',
-    height: 300,
-    width: 300
+    height: 310,
+    width: 310,
+    borderRadius: 2
   },
   phoneStyle: {
-    marginLeft: '32%'
+    marginLeft: '32%',
   },
   mailStyle: {
-    marginLeft: '20%'
+    marginLeft: '20%',
   },
   titleStyle: {
     fontSize: 30

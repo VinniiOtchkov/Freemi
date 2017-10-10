@@ -18,7 +18,6 @@ class PostList extends Component {
 
 componentDidMount() {
   this.props.postActions.fetchPosts();
-  this.props.postActions.fetchPics();
 }
 
 // updateFilter(e) {
@@ -26,6 +25,7 @@ componentDidMount() {
 //   this.setState({ filterCriteria: e.target.value });
 // }
   render() {
+    console.log('THIS.STATE', this.state);
     console.log('THIS.PROPS', this.props);
     console.log('THIS.PROPS.POSTS', this.props.posts);
 
@@ -36,7 +36,7 @@ componentDidMount() {
 
     return (
       <View>
-      <FormInput placeholder="Search" />
+      <FormInput onChangeText={(event) => this.setState({ filterCriteria: event })} placeholder="Search" />
       <View style={styles.postsStyle}>
       {filteredPosts}
       </View>
