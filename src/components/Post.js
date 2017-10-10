@@ -2,12 +2,11 @@ import React from 'react';
 import { View, Text, Image, Linking } from 'react-native';
 import { Icon } from 'react-native-elements';
 
-
 const Post = (props) => {
   console.log(props.post);
   return (
     <View style={styles.containerStyle}>
-          <Image style={styles.imageStyle} source={{ uri: props.post.picURL }} />
+      <Image style={styles.imageStyle} source={{ uri: props.post.picURL }} />
       <Text style={styles.titleStyle}>
       {props.post.title}
       </Text>
