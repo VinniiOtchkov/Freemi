@@ -1,28 +1,29 @@
 import React from 'react';
 import {
   View,
+  ScrollView,
   StyleSheet,
   Image,
 } from 'react-native';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import promises from 'redux-promise-middleware';
-import reducers from '../reducers';
+import Store from '../store';
+
 import Header from './Header';
 import Search from './Search';
 import ImageUpload from './ImageUpload';
 import PostList from './PostList';
 import Footer from './Footer';
 
-const store = createStore(reducers, applyMiddleware(promises()));
+const StoreInstance = Store();
 
 const App = () => {
     return (
-      <Provider store={store}>
+      <Provider store={StoreInstance}>
         <View style={styles.container}>
           <Header />
           <Image style={styles.icon} source={require('../../public/logo.png')} />
-          <Search />
           <ImageUpload />
           <PostList />
           <Footer />

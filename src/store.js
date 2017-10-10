@@ -9,4 +9,4 @@ export default(initialState) => {
       rootReducer,
       applyMiddleware(logger, promises())
     );
-}
+};

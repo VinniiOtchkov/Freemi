@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 import * as postActions from '../actions';
 import { FormInput } from 'react-native-elements';
@@ -14,13 +14,18 @@ class PostList extends Component {
   super(props);
 
   this.state = {
-    list: []
+    filterCriteria: ''
   };
 }
 
 componentDidMount() {
   this.props.postActions.fetchPosts();
 }
+
+// updateFilter(e) {
+//   e.preventDefault();
+//   this.setState({ filterCriteria: e.target.value });
+// }
   render() {
     console.log('THIS.PROPS', this.props);
     console.log('THIS.PROPS.POSTS', this.props.posts);
@@ -31,7 +36,8 @@ componentDidMount() {
   .map(post => <Post key={post.id} post={post} />);
 
     return (
-      <View style={styles.form}>
+      <View>
+      <FormInput placeholder="Search" />
       {filteredPosts}
       </View>
     );

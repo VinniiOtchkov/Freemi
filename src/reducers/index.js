@@ -2,7 +2,9 @@ import { combineReducers } from 'redux';
 import PostReducer from './PostReducer';
 import SelectionReducer from './SelectionReducer';
 
-export default combineReducers({
+const rootReducer = combineReducers({
   posts: PostReducer,
   selectedPostId: SelectionReducer
 });
+
+export default rootReducer;

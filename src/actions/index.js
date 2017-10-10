@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 export const fetchPosts = () => {
-  console.log('WORKS!');
   return {
     type: 'FETCH',
     payload: axios.get('https://freemi-383ac.firebaseio.com/.json')
