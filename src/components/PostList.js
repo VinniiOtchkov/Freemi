@@ -16,7 +16,8 @@ class PostList extends Component {
   };
 }
 
-componentDidMount() {
+componentWillMount() {
+  this.props.postActions.addPost({ title: 'Jimmy' });
   this.props.postActions.fetchPosts();
 }
 

@@ -24,7 +24,7 @@ const Post = (props) => {
       color='#DE451C'
       underlayColor='transparent'
       reverseColor='white'
-      onPress={() => Linking.openURL('tel: 6025039088')}
+      onPress={() => Linking.openURL(`tel: ${props.post.phone}`)}
       />
      <Icon
      style={styles.mailStyle}
