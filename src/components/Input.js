@@ -6,8 +6,9 @@ import { FormInput } from 'react-native-elements';
 import { bindActionCreators } from 'redux';
 import * as postActions from '../actions';
 import Post from './Post';
+import { filteredPosts } from './PostList'
 
-class Input extends Component {
+class InputForm extends Component {
 
   constructor(props) {
     super(props)
@@ -28,11 +29,11 @@ class Input extends Component {
       email
     }
     console.log("newPost - ", newPost)
-    axios.post('https://freemi-383ac.firebaseio.com/.json', {post: newPost})
-    })
+    axios.post('https://freemi-383ac.firebaseio.com/.json', { post: newPost });
   }
   render() {
     let { title, description, phone, email } = this.state
+    console.log('prawps', this.props)
     return (
       <View>
         <FormInput
@@ -53,4 +54,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default Input;
+export default InputForm;

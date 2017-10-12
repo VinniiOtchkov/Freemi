@@ -12,10 +12,14 @@ import Store from '../store';
 import Header from './Header';
 import PostList from './PostList';
 import Footer from './Footer';
+import InputForm from './Input';
 
 const StoreInstance = Store();
 
-const App = () => {
+
+
+const App = (props) => {
+  console.log("help",props.navigation)
     return (
       <Provider store={StoreInstance}>
         <View style={styles.container}>
@@ -24,11 +28,25 @@ const App = () => {
           <Image style={styles.icon} source={require('../../public/logo.png')} />
           <PostList />
           </ScrollView>
-          <Footer />
+          <Footer navigation={props.navigation}/>
         </View>
       </Provider>
     );
 };
+
+const Nav = StackNavigator({
+  Home: {
+    screen: App
+  },
+  InputForm: {
+    screen: InputForm
+  }
+
+},
+{
+ headerMode: 'none',
+});
+
 
 const styles = StyleSheet.create({
   container: {
@@ -41,4 +59,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default App;
+export default Nav;
