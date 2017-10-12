@@ -3,16 +3,17 @@ import { View, Text, Image, Linking } from 'react-native';
 import { Icon } from 'react-native-elements';
 
 const Post = (props) => {
-  console.log(props.post);
   return (
     <View style={styles.containerStyle}>
       <Image style={styles.imageStyle} source={{ uri: props.post.picURL }} />
-      <Text style={styles.titleStyle}>
+      <Text style={{ fontSize: 30 }}>
       {props.post.title}
       </Text>
-      <Text>
+      <Text style={{ fontWeight: 'bold' }}>
       {'\n'}
       Description:{'\n'}
+      </Text>
+      <Text>
       {props.post.description}
       </Text>
 
@@ -33,7 +34,7 @@ const Post = (props) => {
      color='#21BAE3'
      underlayColor='transparent'
      reverseColor='white'
-     onPress={() => Linking.openURL('mailto:freemitest@gmail.com?subject=Freemi: Someone wants your stuff!')}
+     onPress={() => Linking.openURL(`mailto:${props.post.email}?subject=Freemi: Someone wants your stuff!`)}
      />
      </View>
     </View>
@@ -66,9 +67,6 @@ const styles = {
   },
   mailStyle: {
     marginLeft: '20%',
-  },
-  titleStyle: {
-    fontSize: 30
   }
 };
 

@@ -16,15 +16,9 @@ class PostList extends Component {
   };
 }
 
-componentWillMount() {
-  this.props.postActions.addPost({ title: 'Jimmy' });
+componentDidMount() {
   this.props.postActions.fetchPosts();
 }
-
-// updateFilter(e) {
-//   e.preventDefault();
-//   this.setState({ filterCriteria: e.target.value });
-// }
   render() {
     console.log('THIS.STATE', this.state);
     console.log('THIS.PROPS', this.props);
@@ -37,10 +31,12 @@ componentWillMount() {
 
     return (
       <View>
-      <FormInput onChangeText={(event) => this.setState({ filterCriteria: event })} placeholder="Search" />
-      <View style={styles.postsStyle}>
-      {filteredPosts}
-      </View>
+        <FormInput
+        onChangeText={(event) => this.setState({ filterCriteria: event })} placeholder="Search..."
+        />
+        <View style={styles.postsStyle}>
+          {filteredPosts}
+        </View>
       </View>
     );
   }
@@ -59,7 +55,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     dispatch,
-    postActions:bindActionCreators(postActions, dispatch)
+    postActions: bindActionCreators(postActions, dispatch)
   };
 };
 

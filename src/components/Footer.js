@@ -5,7 +5,6 @@ import {
   Button,
   Image,
   ActivityIndicator,
-  TouchableOpacity
 } from 'react-native';
 import { Icon } from 'react-native-elements';
 import * as firebase from 'firebase';
@@ -18,8 +17,6 @@ const config = {
   databaseURL: 'https://freemi-383ac.firebaseio.com',
   storageBucket: 'freemi-383ac.appspot.com'
 };
-
-firebase.initializeApp(config);
 
 export default class Footer extends Component {
   constructor(props) {
