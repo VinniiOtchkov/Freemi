@@ -22,12 +22,12 @@ const App = (props) => {
     return (
       <Provider store={StoreInstance}>
         <View style={styles.container}>
-          <Header />
+          <Header navigation={props.navigation} />
           <ScrollView bounces>
           <Image style={styles.icon} source={require('../../public/logo.png')} />
           <PostList />
           </ScrollView>
-          <Footer navigation={props.navigation}/>
+          <Footer navigation={props.navigation} />
         </View>
       </Provider>
     );

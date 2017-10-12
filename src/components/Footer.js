@@ -49,7 +49,6 @@ export default class Footer extends Component {
         { dpr }
       </View>
     </View>);
-console.log('this.props', this.props.navigation)
     return (
       <View style={styles.uploadStyle}>
       <TouchableOpacity>
