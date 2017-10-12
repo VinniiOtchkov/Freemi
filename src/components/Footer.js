@@ -5,6 +5,7 @@ import {
   Button,
   Image,
   ActivityIndicator,
+  TouchableOpacity
 } from 'react-native';
 import { Icon } from 'react-native-elements';
 import * as firebase from 'firebase';
@@ -34,7 +35,7 @@ export default class Footer extends Component {
     underlayColor='transparent'
     reverseColor='white'
       />) : (<Icon
-       name='camera'
+       name='plus'
        type='font-awesome'
        color='#DE451C'
        underlayColor='transparent'
@@ -51,7 +52,10 @@ export default class Footer extends Component {
 console.log('this.props', this.props.navigation)
     return (
       <View style={styles.uploadStyle}>
+      <TouchableOpacity>
         { dps }
+        </TouchableOpacity>
+
       </View>
     );
   }
