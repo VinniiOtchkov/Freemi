@@ -1,14 +1,14 @@
-const initialState = [];
 import * as firebase from 'firebase'
 import { config } from '../actions'
 
-let someshit = [];
+const initialState = [];
+const statey = [];
 
 const posts = firebase.database().ref();
 posts.on('value', snapshot => {
   snapshot.forEach(child => {
     console.log('child val', child.val())
-    someshit.push(child.val())
+    statey.push(child.val())
   });
 });
 
@@ -20,7 +20,7 @@ export default(state = initialState, action) => {
 
     case 'FETCH':
       console.log('REQUEST DONE ', action.payload);
-      return [...someshit];
+      return [...statey];
 
     case 'FETCH_REJECTED':
       console.log('Request Failed');
@@ -30,8 +30,8 @@ export default(state = initialState, action) => {
       return state;
 
     case 'ADD_FULFILLED':
-      console.log('Add Fulfilled', someshit);
-      return [...someshit];
+      console.log('Add Fulfilled', statey);
+      return [...statey];
 
     case 'ADD_REJECTED':
       console.log('Add Rejected');

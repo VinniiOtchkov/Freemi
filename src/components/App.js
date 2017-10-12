@@ -6,6 +6,7 @@ import {
   Image,
 } from 'react-native';
 import { Provider } from 'react-redux';
+import { StackNavigator } from 'react-navigation';
 import Store from '../store';
 
 import Header from './Header';

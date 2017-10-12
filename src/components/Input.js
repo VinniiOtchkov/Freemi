@@ -19,7 +19,6 @@ class Input extends Component {
       }
   }
 
-
   submitPost() {
     let { title, description, phone, email } = this.state
     const newPost = {

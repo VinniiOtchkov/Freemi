@@ -16,6 +16,7 @@ class PostList extends Component {
   };
 }
 
+
 componentDidMount() {
   this.props.postActions.fetchPosts();
 }
