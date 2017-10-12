@@ -62,21 +62,15 @@ class InputForm extends Component {
 
   submitPost() {
     const { title, description, phone, email, picURL } = this.state
-    const newPost = {
+    this.props.navigation.navigate('Home')
+    axios.post('https://freemi-383ac.firebaseio.com/.json',
+    {
       title,
       description,
       phone,
       email,
       picURL
-    }
-    console.log("newPost ", title,
-      description,
-      phone,
-      email)
-    axios.post('https://freemi-383ac.firebaseio.com/.json', { title,
-      description,
-      phone,
-      email, picURL});
+    });
   }
   render() {
     const dpr = this.state.dp
@@ -99,22 +93,22 @@ class InputForm extends Component {
       <View>
       <View style={{ paddingTop: 70 }}>
           <FormLabel>
-            Item
+            Item:
           </FormLabel>
           <FormInput onChangeText={(event) => this.setState({ title: event })} />
 
           <FormLabel>
-            Description
+            Description:
           </FormLabel>
           <FormInput onChangeText={(event) => this.setState({ description: event })} />
 
           <FormLabel>
-            Email
+            Email:
           </FormLabel>
           <FormInput onChangeText={(event) => this.setState({ email: event })} />
 
           <FormLabel>
-            Phone
+            Phone:
           </FormLabel>
           <FormInput onChangeText={(event) => this.setState({ phone: event })} />
 
