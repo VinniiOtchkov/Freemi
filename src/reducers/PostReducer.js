@@ -8,7 +8,7 @@ const posts = firebase.database().ref();
 posts.on('value', snapshot => {
   snapshot.forEach(child => {
     console.log('child val', child.val())
-    statey.push(child.val())
+    statey.unshift(child.val())
   });
 });
 

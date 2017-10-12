@@ -40,7 +40,6 @@ const Nav = StackNavigator({
   InputForm: {
     screen: InputForm
   }
-
 },
 {
  headerMode: 'none',
