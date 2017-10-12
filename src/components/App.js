@@ -19,7 +19,6 @@ const StoreInstance = Store();
 
 
 const App = (props) => {
-  console.log("help",props.navigation)
     return (
       <Provider store={StoreInstance}>
         <View style={styles.container}>

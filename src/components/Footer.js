@@ -37,7 +37,7 @@ export default class Footer extends Component {
       />) : (<Icon
        name='plus'
        type='font-awesome'
-       color='#DE451C'
+       color='#D6431C'
        underlayColor='transparent'
        reverseColor='white'
       onPress={() => this.props.navigation.navigate('InputForm')}
@@ -55,7 +55,6 @@ console.log('this.props', this.props.navigation)
       <TouchableOpacity>
         { dps }
         </TouchableOpacity>
-
       </View>
     );
   }

@@ -9,11 +9,9 @@ const Post = (props) => {
       <Text style={{ fontSize: 30 }}>
       {props.post.title}
       </Text>
-      <Text style={{ fontWeight: 'bold' }}>
+      <Text>
       {'\n'}
       Description:{'\n'}
-      </Text>
-      <Text>
       {props.post.description}
       </Text>
 

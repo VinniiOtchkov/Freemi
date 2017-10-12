@@ -1,6 +1,6 @@
 'use strict';
 
-import React , {Component} from 'react';
+import React , { Component } from 'react';
 import
 {
   View,
@@ -11,7 +11,7 @@ class DARNNavigator extends React.Component{
   constructor(props) {
   super(props);
   }
-  
+
   render() {
     var initialRouteID = 'stringvalueofid';
     return (
