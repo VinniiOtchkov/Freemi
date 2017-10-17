@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
-import * as postActions from '../actions';
 import { FormInput } from 'react-native-elements';
 import { bindActionCreators } from 'redux';
-import axios from 'axios';
-
+import * as postActions from '../actions';
 import Post from './Post';
 
 class PostList extends Component {
@@ -14,14 +12,16 @@ class PostList extends Component {
   super(props);
 
   this.state = {
-    list: []
+    filterCriteria: ''
   };
 }
+
 
 componentDidMount() {
   this.props.postActions.fetchPosts();
 }
   render() {
+    console.log('THIS.STATE', this.state);
     console.log('THIS.PROPS', this.props);
     console.log('THIS.PROPS.POSTS', this.props.posts);
 
@@ -31,16 +31,21 @@ componentDidMount() {
   .map(post => <Post key={post.id} post={post} />);
 
     return (
-      <View style={styles.form}>
-      {filteredPosts}
+      <View>
+        <FormInput
+        onChangeText={(event) => this.setState({ filterCriteria: event })} placeholder="Search..."
+        />
+        <View style={styles.postsStyle}>
+          {filteredPosts}
+        </View>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  form: {
-    paddingTop: 0
+  postsStyle: {
+  paddingTop: 220
   }
 });
 
@@ -51,7 +56,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     dispatch,
-    postActions:bindActionCreators(postActions, dispatch)
+    postActions: bindActionCreators(postActions, dispatch)
   };
 };
 

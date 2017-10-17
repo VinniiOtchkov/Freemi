@@ -1,35 +1,50 @@
 import React from 'react';
 import {
   View,
+  ScrollView,
   StyleSheet,
   Image,
 } from 'react-native';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import promises from 'redux-promise-middleware';
-import reducers from '../reducers';
+import { StackNavigator } from 'react-navigation';
+import Store from '../store';
+
 import Header from './Header';
-import Search from './Search';
-import ImageUpload from './ImageUpload';
 import PostList from './PostList';
 import Footer from './Footer';
+import InputForm from './Input';
 
-const store = createStore(reducers, applyMiddleware(promises()));
+const StoreInstance = Store();
 
-const App = () => {
+
+
+const App = (props) => {
     return (
-      <Provider store={store}>
+      <Provider store={StoreInstance}>
         <View style={styles.container}>
-          <Header />
+          <Header navigation={props.navigation} />
+          <ScrollView bounces>
           <Image style={styles.icon} source={require('../../public/logo.png')} />
-          <Search />
-          <ImageUpload />
           <PostList />
-          <Footer />
+          </ScrollView>
+          <Footer navigation={props.navigation} />
         </View>
       </Provider>
     );
 };
+
+const Nav = StackNavigator({
+  Home: {
+    screen: App
+  },
+  InputForm: {
+    screen: InputForm
+  }
+},
+{
+ headerMode: 'none',
+});
+
 
 const styles = StyleSheet.create({
   container: {
@@ -42,4 +57,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default App;
+export default Nav;

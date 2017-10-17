@@ -1,26 +1,37 @@
-let initialState = [];
+import * as firebase from 'firebase'
+import { config } from '../actions'
+
+const initialState = [];
+const statey = [];
+
+const posts = firebase.database().ref();
+posts.on('value', snapshot => {
+  snapshot.forEach(child => {
+    console.log('child val', child.val())
+    statey.unshift(child.val())
+  });
+});
 
 export default(state = initialState, action) => {
-  console.log(action);
   switch (action.type) {
     case 'FETCH_PENDING':
       console.log('Request Pending');
       return state;
 
-    case 'FETCH_FULFILLED':
-      console.log('REQUEST DONE ', action.payload.data);
-      return [...action.payload.data];
+    case 'FETCH':
+      console.log('REQUEST DONE ', action.payload);
+      return [...statey];
 
     case 'FETCH_REJECTED':
       console.log('Request Failed');
       return state;
 
     case 'ADD':
-      return [...state.action.payload];
+      return state;
 
     case 'ADD_FULFILLED':
-      console.log('Add Fulfilled');
-      return [...action.payload.data];
+      console.log('Add Fulfilled', statey);
+      return [...statey];
 
     case 'ADD_REJECTED':
       console.log('Add Rejected');

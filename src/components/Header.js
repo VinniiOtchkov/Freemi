@@ -12,7 +12,7 @@ return (
   color='white'
   underlayColor='transparent'
   style={styles.iconStyle}
-  onPress={() => console.log('Works!')}
+  onPress={() => props.navigation.navigate('Home')}
   />
   </View>
   );
